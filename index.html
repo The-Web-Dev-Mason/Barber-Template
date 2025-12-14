@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barber Shop Template | Web Dev Mason</title>
+    <meta name="description" content="Premium grooming booking system template by Web Dev Mason.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Manrope:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+    <nav>
+        <a href="#" style="text-decoration: none; color: #fff; font-family: 'Oswald'; font-size: 1.5rem; font-weight: bold; letter-spacing: 1px;">
+            WEB DEV MASON <span style="color: #d4af37;">DEMO</span>
+        </a>
+
+        <div class="hamburger" onclick="toggleMobileNav()">☰</div>
+        <div class="nav-links">
+            <div class="close-menu-btn" onclick="toggleMobileNav()">×</div>
+            <a href="#about" onclick="toggleMobileNav()">THE STORY</a>
+            <a href="#team" onclick="toggleMobileNav()">TEAM</a>
+            <a href="#services" onclick="toggleMobileNav()">SERVICES</a>
+            <a href="#locations" onclick="toggleMobileNav()">LOCATIONS</a>
+            <button onclick="openModal(); toggleMobileNav()" class="btn" style="margin-left: 30px; padding: 10px 25px; font-size: 0.8rem;">BOOK NOW</button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 style="font-size: 4rem; line-height: 1.1; margin-bottom: 20px;">PREMIUM<br>GROOMING</h1>
+            <p>LONDON • NEW YORK • DUBAI</p>
+            <p style="color: #d4af37; font-size: 0.9rem; margin-top: 10px; letter-spacing: 2px;">[ TEMPLATE DEMO BY WEB DEV MASON ]</p>
+            <button onclick="openModal()" class="btn" style="margin-top: 30px;">Book Appointment</button>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>The Experience</h2>
+                    <div class="divider" style="margin: 0 0 30px 0; background: #333;"></div>
+                    <p>This is where you tell the client's story. It started with a vision to deliver the best service at the most convenient price. We are dedicated to the craft of traditional barbering with a modern touch.</p>
+                    <p>Our reputation is built on consistency. It's our promise to make you look good, every time you sit in the chair.</p>
+                </div>
+                <img src="https://placehold.co/600x400/111/444?text=Shop+Interior" alt="Shop Interior" class="about-img">
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="section-padding">
+        <div class="container">
+            <h2 class="text-center">The Crew</h2>
+            <div class="divider"></div>
+            <p class="text-center" style="color:#666; max-width: 600px; margin: 0 auto 40px auto;">Meet our master barbers.</p>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="https://placehold.co/400x500/222/FFF?text=Barber+1" alt="Barber 1">
+                    <div class="team-info"><h4>Head Barber</h4></div>
+                </div>
+                <div class="team-card">
+                    <img src="https://placehold.co/400x500/222/FFF?text=Barber+2" alt="Barber 2">
+                    <div class="team-info"><h4>Senior Stylist</h4></div>
+                </div>
+                <div class="team-card">
+                    <img src="https://placehold.co/400x500/222/FFF?text=Barber+3" alt="Barber 3">
+                    <div class="team-info"><h4>Stylist</h4></div>
+                </div>
+                <div class="team-card">
+                    <img src="https://placehold.co/400x500/222/FFF?text=Barber+4" alt="Barber 4">
+                    <div class="team-info"><h4>Barber</h4></div>
+                </div>
+                <div class="team-card">
+                    <img src="https://placehold.co/400x500/222/FFF?text=Barber+5" alt="Barber 5">
+                    <div class="team-info"><h4>Apprentice</h4></div>
+                </div>
+                <div class="team-card">
+                    <img src="https://placehold.co/400x500/222/FFF?text=Barber+6" alt="Barber 6">
+                    <div class="team-info"><h4>Junior Barber</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding" style="background: #0a0a0a;">
+        <div class="container">
+            <h2 class="text-center">Services</h2>
+            <div class="divider"></div>
+            <div class="menu-list">
+                <div class="menu-item"><div class="menu-title"><h3>Signature Haircut</h3><span>45 min</span></div><div class="menu-price">£30</div></div>
+                <div class="menu-item"><div class="menu-title"><h3>Skin Fade</h3><span>45 min</span></div><div class="menu-price">£35</div></div>
+                <div class="menu-item"><div class="menu-title"><h3>Beard Sculpt & Trim</h3><span>30 min</span></div><div class="menu-price">£20</div></div>
+                <div class="menu-item"><div class="menu-title"><h3>Hot Towel Shave</h3><span>30 min</span></div><div class="menu-price">£25</div></div>
+                <div class="menu-item"><div class="menu-title"><h3>Full Service Package</h3><span>1 hr 15 min</span></div><div class="menu-price">£55</div></div>
+            </div>
+            <div class="text-center" style="margin-top: 50px;"><button onclick="openModal()" class="btn">BOOK APPOINTMENT</button></div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section-padding">
+        <div class="container">
+            <h2 class="text-center">Our Work</h2>
+            <div class="divider"></div>
+            <p class="text-center" style="color:#666; max-width: 600px; margin: 0 auto;">Precision in every cut.</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item"><img src="https://placehold.co/300x350/222/FFF?text=Haircut+1" alt="Work 1"></div>
+                <div class="portfolio-item"><img src="https://placehold.co/300x350/222/FFF?text=Haircut+2" alt="Work 2"></div>
+                <div class="portfolio-item"><img src="https://placehold.co/300x350/222/FFF?text=Haircut+3" alt="Work 3"></div>
+                <div class="portfolio-item"><img src="https://placehold.co/300x350/222/FFF?text=Haircut+4" alt="Work 4"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="locations">
+        <div class="loc-grid">
+            <div class="loc-item">
+                <div class="map-container">
+                    <iframe src="https://maps.google.com/maps?q=London&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                </div>
+                <h3>Central Branch</h3>
+                <p>123 High Street<br>City Center</p>
+                <button onclick="openModal()" class="btn-outline" style="padding: 10px 20px; font-size: 0.8rem;">BOOK THIS BRANCH</button>
+            </div>
+            
+            <div class="loc-item">
+                <div class="map-container">
+                    <iframe src="https://maps.google.com/maps?q=New+York&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                </div>
+                <h3>Downtown</h3>
+                <p>45 Main Avenue<br>Downtown District</p>
+                <button onclick="openModal()" class="btn-outline" style="padding: 10px 20px; font-size: 0.8rem;">BOOK THIS BRANCH</button>
+            </div>
+
+            <div class="loc-item">
+                <div class="map-container">
+                    <iframe src="https://maps.google.com/maps?q=Dubai&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                </div>
+                <h3>Uptown</h3>
+                <p>789 Park Lane<br>Uptown Area</p>
+                <button onclick="openModal()" class="btn-outline" style="padding: 10px 20px; font-size: 0.8rem;">BOOK THIS BRANCH</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <h2 class="text-center">Visit Us</h2>
+            <div class="divider"></div>
+            <div class="contact-grid">
+                <div class="contact-box contact-dark">
+                    <span class="contact-label">Phone</span><p class="contact-value">+44 7000 000 000</p>
+                    <span class="contact-label">Email</span><p class="contact-value">demo@webdevmason.com</p>
+                </div>
+                <div class="contact-box contact-light">
+                    <span class="contact-label" style="margin-bottom: 20px; display:block;">Opening Hours</span>
+                    <div class="hours-list">
+                        <p>Mon - Fri <span>10:00am - 7:00pm</span></p>
+                        <p>Saturday <span>09:00am - 6:00pm</span></p>
+                        <p>Sunday <span>Closed</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="agency-credit">
+                <a href="https://yourportfolio.com" target="_blank">
+                    <span style="opacity: 0.6; font-size: 0.8rem; margin-right: 8px;">Template by</span> 
+                    <span class="agency-name">WEB DEV MASON</span>
+                </a>
+            </div>
+            <p style="margin-top: 15px; color: #444;">© 2025 Template Demo. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="bookingModal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="close-btn" onclick="closeModal()">×</span>
+            <h2 style="margin-bottom: 20px;">Book Appointment</h2>
+            
+            <div id="booking-step-1">
+                <div style="margin-bottom: 15px; text-align: left;">
+                    <label style="color:#888; font-size: 0.9rem;">Choose Location</label>
+                    <select id="locationSelect" onchange="updateBarberList()" style="width: 100%; padding: 12px; background: #111; color: #fff; border: 1px solid #333; margin-top: 5px;">
+                        <option value="" disabled selected>Select a Shop</option>
+                        <option value="Central">Central Branch</option>
+                        <option value="Downtown">Downtown Branch</option>
+                        <option value="Uptown">Uptown Branch</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 15px; text-align: left;">
+                    <label style="color:#888; font-size: 0.9rem;">Choose Barber</label>
+                    <select id="barberSelect" onchange="resetTimeSlot()" disabled style="width: 100%; padding: 12px; background: #111; color: #fff; border: 1px solid #333; margin-top: 5px; opacity: 0.5;">
+                        <option>Select Location First</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 20px; text-align: left;">
+                    <label style="color:#888; font-size: 0.9rem;">Choose Date</label>
+                    <input type="date" id="dateSelect" onchange="loadAvailability()" style="width: 100%; padding: 12px; background: #111; color: #fff; border: 1px solid #333; margin-top: 5px;">
+                </div>
+
+                <p id="loading-text" style="display:none; color: #d4af37;">Checking availability...</p>
+                <div id="time-slots" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;"></div>
+            </div>
+
+            <div id="booking-step-2" style="display: none; text-align: left;">
+                <h4 id="confirm-details-header" style="color: #fff; margin-bottom: 15px;">Confirm Details</h4>
+                <input type="text" id="custName" placeholder="Your Name" style="width: 100%; padding: 12px; margin-bottom: 10px; background: #111; border: 1px solid #333; color: white;">
+                <input type="email" id="custEmail" placeholder="Your Email" style="width: 100%; padding: 12px; margin-bottom: 10px; background: #111; border: 1px solid #333; color: white;">
+                <input type="tel" id="custPhone" placeholder="Mobile Number" style="width: 100%; padding: 12px; margin-bottom: 20px; background: #111; border: 1px solid #333; color: white;">
+                
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="backToStep1()" class="btn-outline" style="flex: 1; padding: 12px;">Back</button>
+                    <button onclick="finalizeBooking()" class="btn" style="flex: 1; padding: 12px;">Confirm Booking</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
